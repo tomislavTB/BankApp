@@ -214,6 +214,12 @@ namespace BankApp.Migrations
                 column: "CityId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Banks_Name_IBAN",
+                table: "Banks",
+                columns: new[] { "Name", "IBAN" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Cities_CountryId",
                 table: "Cities",
                 column: "CountryId");
@@ -222,6 +228,12 @@ namespace BankApp.Migrations
                 name: "IX_Clients_CityId",
                 table: "Clients",
                 column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_FirstName_LastName_Email_IBAN",
+                table: "Clients",
+                columns: new[] { "FirstName", "LastName", "Email", "IBAN" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Savings_AccountTypeId",

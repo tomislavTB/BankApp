@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankApp.Migrations
 {
     [DbContext(typeof(BankContext))]
-    [Migration("20190724150738_AddSeeds")]
+    [Migration("20190725105257_AddSeeds")]
     partial class AddSeeds
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,6 +72,9 @@ namespace BankApp.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CityId");
+
+                    b.HasIndex("Name", "IBAN")
+                        .IsUnique();
 
                     b.ToTable("Banks");
 
@@ -211,6 +214,9 @@ namespace BankApp.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CityId");
+
+                    b.HasIndex("FirstName", "LastName", "Email", "IBAN")
+                        .IsUnique();
 
                     b.ToTable("Clients");
 
@@ -426,12 +432,12 @@ namespace BankApp.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("BankApp.Models.Bank", "Bank")
-                        .WithMany()
+                        .WithMany("Savings")
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("BankApp.Models.Client", "Client")
-                        .WithMany()
+                        .WithMany("Savings")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });

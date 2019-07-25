@@ -71,6 +71,9 @@ namespace BankApp.Migrations
 
                     b.HasIndex("CityId");
 
+                    b.HasIndex("Name", "IBAN")
+                        .IsUnique();
+
                     b.ToTable("Banks");
 
                     b.HasData(
@@ -209,6 +212,9 @@ namespace BankApp.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CityId");
+
+                    b.HasIndex("FirstName", "LastName", "Email", "IBAN")
+                        .IsUnique();
 
                     b.ToTable("Clients");
 
@@ -424,12 +430,12 @@ namespace BankApp.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("BankApp.Models.Bank", "Bank")
-                        .WithMany()
+                        .WithMany("Savings")
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("BankApp.Models.Client", "Client")
-                        .WithMany()
+                        .WithMany("Savings")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });

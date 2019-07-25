@@ -1,0 +1,598 @@
+{
+	"info": {
+		"_postman_id": "b37ae9bd-c26d-4c1b-b9be-e3135c6399f4",
+		"name": "BankApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"Erste\", \n\t\"CityId\":  1, \n\t\"IBAN\": \"123456964587453\",\n\t\"Phone\":  \"099456874\", \n\t\"Email\":  \"erste@nesto.com\"\n}"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/banks",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"banks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/banks",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"banks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bank",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"PBZ\", \n\t\"CityId\":  1, \n\t\"IBAN\": \"123756789123456\",\n\t\"Phone\":  \"098545758\", \n\t\"Email\":  \"pbz@nesto.com\"\n}"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/banks/6",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"banks",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bank",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/banks/6",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"banks",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n       \r\n        \"firstName\": \"Ivan\",\r\n        \"lastName\": \"Ivic\",\r\n        \"address\": \"Jedna ulica 5\",\r\n        \"birthdate\": \"1991-03-01\",\r\n        \"email\": \"ivan@nesto.com\",\r\n        \"iban\": \"123546874569875\",\r\n        \"cityId\": 1\r\n    }"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/clients",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/clients",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n       \r\n        \"firstName\": \"Novi\",\r\n        \"lastName\": \"Ivic\",\r\n        \"address\": \"Jedna druga ulica 5\",\r\n        \"birthdate\": \"1990-03-01\",\r\n        \"email\": \"ivan@nesto.com\",\r\n        \"iban\": \"123546874569875\",\r\n        \"cityId\": 1\r\n    }"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/clients/3",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"clients",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/clients/6",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"clients",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountType",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"Name\": \"Current Account\"\n}"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/accountTypes",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"accountTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/accountTypes",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"accountTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountType",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"Savings Account\"\n}"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/accountTypes/3",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"accountTypes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountType",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/accountTypes/3",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"accountTypes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "City",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"name\": \"ZagrebNovi\",\r\n        \"zip\": \"10005\",\r\n        \"countryId\": 1\r\n    }"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/Cities",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/cities",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "City",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"Name\": \"Istanbul\",\n\t\"Zip\": \"11111\",\n\t\"CountryId\": \"1\"\n}"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/Cities/7",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Cities",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "City",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/Cities/7",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Cities",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"Croatia\"\r\n }"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/Countries",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{RootUrl}}/Countries",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"Name\": \"Turkey\"\n}"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/Countries/3",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Countries",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/Countries/3",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"Countries",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saving",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \r\n        \"StartOfSaving\": \"2015-03-01\",\r\n        \"amount\": 5000,\r\n        \"interest_rate\": 0.20,\r\n        \"accountTypeId\": 1,\r\n        \"clientId\": 2,\r\n        \"bankId\": 2\r\n    }"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/savings",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"savings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saving",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/savings",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"savings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saving",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \r\n        \"StartOfSaving\": \"2018-01-01\",\r\n        \"amount\": 700000,\r\n        \"interest_rate\": 0.30,\r\n        \"accountTypeId\": 1,\r\n        \"clientId\": 3,\r\n        \"bankId\": 3\r\n    }"
+				},
+				"url": {
+					"raw": "{{RootUrl}}/savings/3",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"savings",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saving",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{RootUrl}}/savings/6",
+					"host": [
+						"{{RootUrl}}"
+					],
+					"path": [
+						"savings",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "777bccb7-69ae-422e-af49-afc453cdaeee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "386a09cb-f04f-4102-acb5-ce40e0d15e72",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "938d0f09-a8cc-4b5f-b752-26294d861cce",
+			"key": "RootUrl",
+			"value": "http://localhost:4800/api",
+			"type": "string"
+		}
+	]
+}
